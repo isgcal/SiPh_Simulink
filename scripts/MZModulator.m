@@ -28,8 +28,8 @@ classdef MZModulator
     methods
         % constructor
         function mzm = MZModulator(model, L, n0, ng, a0, Ne, Nh, ...
-                Lj, wf, a1, n1, Vbi)
-            if nargin == 12
+                Lj, wf, a1, n1, Vbi, f0)
+            if nargin == 13
                 mzm.model = model;
                 mzm.L = L;
                 mzm.n0 = n0;
@@ -41,7 +41,8 @@ classdef MZModulator
                 mzm.wf = wf;
                 mzm.a1 = a1;
                 mzm.n1 = n1;
-                mzm.Vbi = Vbi; 
+                mzm.Vbi = Vbi;
+                mzm.f0 = f0;
             else
                 disp('wrong number of inputs');
             end

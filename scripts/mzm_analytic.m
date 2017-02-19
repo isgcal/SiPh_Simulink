@@ -36,7 +36,7 @@ fstep = 100e9;
 f_swp = fstart:fstep:fend;
 lambda = 3e8./f_swp;
 
-mzm0 = MZModulator(opt, L, n0, ng, a0, Ne, Nh, Lj, wf, a1, n1, Vbi);
+mzm0 = MZModulator(opt, L, n0, ng, a0, Ne, Nh, Lj, wf, a1, n1, Vbi,f0);
 
 Vdrive_0 = 0.5;
 Vdrive_1 = -1.5;

@@ -29,9 +29,9 @@ classdef RingModulator
     end
     methods
         % constructor
-        function ring = RingModulator(model, L, t_in, t_drop, ...
-                n0, ng, a0, Ne, Nh, Lj, wf, a1, n1, Vbi)
-            if nargin == 14
+        function ring = RingModulator(model,L, t_in, t_drop, ...
+                n0, ng, a0, Ne, Nh, Lj, wf, a1, n1, Vbi,f0)
+            if nargin == 15
                 ring.model = model;
                 ring.L = L;
                 ring.t_in = t_in;
@@ -45,7 +45,8 @@ classdef RingModulator
                 ring.wf = wf;
                 ring.a1 = a1;
                 ring.n1 = n1;
-                ring.Vbi = Vbi;             
+                ring.Vbi = Vbi;
+                ring.f0 = f0;
             else
                 disp('wrong number of inputs');
             end
