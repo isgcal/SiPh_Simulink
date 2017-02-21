@@ -121,15 +121,15 @@ classdef RingModulator
             % find the nominal drop port coupling to
             % get closest to critical coupling
             [~, alpha] = self.material(lambda0, V);
-            if self.t_in^2 > self.t_drop^2*exp(-self.L*alpha*2)
+            if self.t_in^2 > self.t_drop^2*exp(-self.L*alpha*2)*1.01
                 state = 'under coupled';
                 t_drop_critical = 1;
-            elseif self.t_in^2 == self.t_drop^2*exp(-self.L*alpha*2)
-                state = 'critically coupled';
-                t_drop_critical = self.t_drop;
-            else
+            elseif self.t_in^2 < self.t_drop^2*exp(-self.L*alpha*2)*0.99
                 state = 'over coupled';
                 t_drop_critical = sqrt((self.t_in^2)/exp(-self.L*alpha*2));
+            else
+                state = 'critically coupled';
+                t_drop_critical = self.t_drop;
             end
         end
             
